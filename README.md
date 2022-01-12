@@ -6,7 +6,7 @@ To design and orchestrate a Data Pipeline using Databricks and Azure to perform 
 ### Formula 1 Overview
 An Overview of Formula 1 racing can be learned from https://f1chronicle.com/a-beginners-guide-to-formula-1/
 
-![F1 Overview](../databricks-F1-Project/images/overview.png)
+![F1 Overview](./images/overview.png)
 
 ## Data Source
 The data for all the formula 1 races from 1950s onwards is ontained from an open source API called Ergest Developer API (http://ergast.com/mrd/). The API provides the following tables: <br>
@@ -16,7 +16,7 @@ The data for all the formula 1 races from 1950s onwards is ontained from an open
 Attributes of each tables is described in http://ergast.com/docs/f1db_user_guide.txt. Each tables is present as a single line/multiline CSV or JSON file in the data folder. 
 
 ## Data Pipeline
-![Data Pipeline](../databricks-F1-Project/images/data_pipeline.png)
+![Data Pipeline](./images/data_pipeline.png)
 The data from Ergest Developer API is imported into raw ADLS container on Azure. We will then take this data and process using databricks notebook to ingest into ingested raw layer. The data in this layer will have schema applied as as well stored in the columnar parquet format. We will create partitions wherever applicable as well as add additional information for audit purposes, such as a date, a source of the data, etc. Ingested data will then be tranformed via databricks notebook for presentation layer where dashboards are created to statisfy our requirements for analysis. Azure Data Factory is later used for scheduling and monitoring requirements. This pipeline is later converted into Delta Lakehouse architecture to satisfy other requirements around GDPR, time travel, etc.
 
 ## Project Requirements
@@ -70,10 +70,10 @@ The data from Ergest Developer API is imported into raw ADLS container on Azure.
 
 ## Results
 ### Dominant Divers
-![Dominant Divers](../databricks-F1-Project/images/dominant_drivers.png)
+![Dominant Divers](./images/dominant_drivers.png)
 
 ### Dominant Teams
-![Dominant Teams](../databricks-F1-Project/images/dominant_teams.png)
+![Dominant Teams](./images/dominant_teams.png)
 
 ## Technologies Used:
 - Datadricks
